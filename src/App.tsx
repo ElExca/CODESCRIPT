@@ -82,27 +82,38 @@ function App() {
     
   
     return (
-      <div>
-
-
-  
+      <div className="bg-blue-50 min-h-screen pt-0 flex flex-col justify-center items-center p-4">
+    
         <MonacoEditor
           width="800"
-          height="600"
+          height="400"
           language="javascript"
           theme="vs-dark"
           value={editorContent}
           onChange={(newContent) => setEditorContent(newContent)}
+          className="rounded-lg shadow-lg mb-4"
         />
-  
-        <button onClick={handleValidarClick}>Validar</button>
-        <p>La cadena es válida: {esValida ? 'Sí' : 'No'}</p>
+    
+        <button
+          onClick={handleValidarClick}
+          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+        >
+          Compilar
+        </button>
+    
+        <p className="text-lg font-semibold mt-2">
+          La cadena es válida: {esValida ? 'Sí' : 'No'}
+        </p>
+    
         {mensajeError && (
-        <p style={{ color: "red" }}>{mensajeError}</p>
+          <p className="text-red-500 text-sm mt-2">
+            {mensajeError}
+          </p>
         )}
-        
+    
       </div>
     );
+    
   }
 
 export default App;
