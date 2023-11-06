@@ -67,9 +67,13 @@ function App() {
     
       if (esValida) {
         console.log(`La cadena es válida: ${esValida}`);
+        console.log('Transiciones:');
+        console.log(transicionesMensaje);
       } else {
         console.error("La cadena no es válida");
         console.error(mensajeError);
+        console.log('Transiciones:');
+        console.log(transicionesMensaje);
       }
     
       // Mostrar mensaje de error en el componente
